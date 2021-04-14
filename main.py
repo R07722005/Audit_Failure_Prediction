@@ -73,7 +73,7 @@ cofing = {
     .replace('\\', '/'),
     'past_vote_thread': 24,
     'testing_year': 2019,
-    'output_loc': os.path.join(path, "結果.xlsm")
+    'output_loc': os.path.join(path, "結果.xlsx")
     .replace('\\', '/'),
 }
 dnn = DNN.Dnn_run(cofing)
