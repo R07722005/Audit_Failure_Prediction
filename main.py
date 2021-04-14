@@ -29,7 +29,7 @@ for i in data_name:
     if not os.path.exists((data_path+'/{}').format(i)):
         dbx.files_download_to_file(download_path=(data_path+'/{}').format(i),path="/Essay_data/{}".format(i))
         print('{} download complete'.format(i))
-'''
+
 dis_creator= Discriminate_accrural_creator(os.path.join(path, 'data/裁決性應計數的公式_正確.xlsx'.replace('\\','/')))
 dis_creator.compute_accrural()
 dis_creator.output_excel(os.path.join(path, 'data/裁決性應計數的公式_已產生各項應變數_correct.xlsx'.replace('\\','/')))
@@ -44,7 +44,7 @@ audit_failure_finder = Audit_failure(os.path.join(path,'data/重編彙整總資�
 audit_failure_finder.compute()
 audit_failure_finder.output(os.path.join(path,'data/bs_income_equity_cashflow_增加審計失敗.xlsx').replace('\\', '/'))
 #--------------------------------
-'''
+
 concator = Concat_all(audit_qulity_loc=os.path.join(path,'data/bs_income_equity_cashflow_增加審計失敗.xlsx').replace('\\', '/'), BIEC_loc = os.path.join(path, 'data/BS_income_equity_cashflow_改正順序.xlsx').replace('\\', '/'), dis_accr_loc=os.path.join(path, 'data/裁決性應計數的公式_已產生各項應變數_correct.xlsx').replace('\\','/'))
 #concator = Concat_all(audit_qulity_loc=audit_failure_finder.where_is_my_output_file(), BIEC_loc = sortor.where_is_my_output_file(), dis_accr_loc=dis_creator.where_is_my_output_file())
 concator.run()
